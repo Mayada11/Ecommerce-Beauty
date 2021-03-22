@@ -1,0 +1,121 @@
+
+ .container {
+    max-width: 960px;
+    max-height: 200vh;
+  }
+ .page-footer{
+    background-image: url(src\assets\Footer-top.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding: 150px 0 50px 0;
+    background-color: #272a3a;
+}
+.footer .footer-list-title {
+    color: #edeef5;
+}
+ .footer .company-sub-menu li a {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    color: #8a8eaa;
+    text-decoration: none;
+}
+.footer .footer-desc, .footer .footer-alt {
+    color: #8a8eaa;
+}
+h3{
+    color: #8a8eaa;
+    font-weight: 400;
+    font-family: Trade Gothic W01 Light,Arial,sans-serif;
+    font-size: .875rem;
+    text-decoration: underline;
+}
+ .footer .footer-icons a:hover {
+    color: #edeef5;
+}
+
+.footer .footer-icons a {
+    color: #8a8eaa;
+}
+ .foot-list:hover
+{
+  color:#edeef5;
+  cursor: pointer;
+}
+.c-footer__logos {
+    line-height: 70px;
+}
+.c-footer__logos ul{
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.c-footer__logos li:not(:last-child) {
+    margin-right: 1.5rem;
+}
+.c-footer__logos ul li {
+    display: inline-block;
+}
+.c-footer__logo--visa {
+    background-image: url(src\assets\visa.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* width: 4.0625rem;
+    height: 1.75rem; */
+    width: 5rem;
+    height: 3rem;
+    margin-top: 5vh;
+    margin-left: 10vw;
+}
+.c-footer__logo--mastercard {
+    background-image: url(src\assets\masterCard.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* width: 4.0625rem;
+    height: 1.75rem; */
+    width: 10rem;
+    height: 3rem;
+    margin-top: 5vh;
+    margin-left: 10vw;
+}
+.c-footer__logo--light {
+    background-image: url(src\assets\logo1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* width: 4.0625rem;
+    height: 1.75rem; */
+    width: 20rem;
+    height: 3.5rem;
+    
+}
+[class^="c-footer__logo--"] {
+    border: 0;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    display: inline-block;
+    vertical-align: middle;
+    pointer-events: none;
+    
+}
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+.scroll-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+    
+   }
+   .show-scrollTop {
+    opacity: 1;
+    transition: all .2s ease-in-out;
+   }
+   .btn {
+       background-color: rgb(219, 44, 82);
+       
+   }
+

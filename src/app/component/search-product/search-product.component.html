@@ -1,0 +1,21 @@
+
+       <br><br><br><br><br><br><br><br><br>
+     
+       <div class="alert alert-danger" role="alert" style="width: 100%;">
+          {{msg}}
+         </div>
+         <div class="card " *ngFor="let p of productList">
+               <img src={{p.productImage}} class="card-img-top" alt="Dark Kiss Lotion">
+               <div class="card-body" >
+                   <p class="field--name-name">{{p.title}}</p>
+                   <p class="subtitle">{{p.description}}</p>
+                   <div class="price">
+                       <span class="price-currencysuffix">EGP</span>
+                       <span class="price-amount">{{p.price}} </span>
+                   </div>
+                   <a class="btn btn-primary" (click)="onSelectedProduct(p._id)"> 
+                       <fa-icon [icon]="faCartPlus"></fa-icon> Add To Cart 
+                   </a>
+               </div>
+           </div>
+   

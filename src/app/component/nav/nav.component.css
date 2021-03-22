@@ -1,0 +1,60 @@
+.two{
+    text-align: center;
+}
+.imglogo{
+    width: 100%;
+    
+}
+.logoimg{
+    width: 4.5em;
+ 
+}
+a{
+    color: rgba(240, 128, 128, 0.733);
+}
+/* .first{
+    margin: 1%;
+} */
+.n:hover{
+background-color: rgb(209, 202, 202);
+box-shadow: .5px .5px .5px .5px rgb(209, 202, 202),
+-.5px -.5px .5px .5px rgb(209, 202, 202);
+}
+.btn
+{
+    background-color: indianred;
+    color: lavenderblush;
+    border-color: lightcoral;
+    
+}
+.btn:hover{
+    background-color: rgb(224, 137, 137); 
+    box-shadow: 1px 1px 1px rgb(224, 137, 137),
+    -1px -1px 1px rgb(229, 151, 151);
+}
+.rotate:hover {
+    animation: rotation 4s infinite linear;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(20deg);
+      top: -10px;
+    }
+    50% {
+      transform: rotate(0deg);
+      top: 0px;
+    }
+    75% {
+      transform: rotate(-20deg);
+      top: 10px;
+    }
+    100% {
+      transform: rotate(0deg);
+      top: 20px;
+    }
+  }
+ 
+  

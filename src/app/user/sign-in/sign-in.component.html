@@ -1,0 +1,60 @@
+<div id="container">
+    <br><br><br>
+
+
+    <div id="formDiv">
+        <form name="signInForm" #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+
+            
+            <div class="form-group">
+
+                <input class="formElement" type="text" #email="ngModel" [(ngModel)]="model.email"
+                    name="email" placeholder="Email" required [pattern]="emailRegex">
+                <div *ngIf="email.touched && email.errors" class="formElement">
+                    <span *ngIf="email.errors.required" class="validation-message">email is required</span>
+                    <span *ngIf="email.errors.pattern" class="validation-message">invalid pattern for e-mail</span>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <input class="formElement" type="password" #password="ngModel"
+                    [(ngModel)]="model.password" name="password" placeholder="Password"
+                     minlength="6" required>
+                <div *ngIf="password.touched && password.errors" class="formElement">
+                    <span *ngIf="password.errors.required" class="validation-message">password is required</span>
+                    <span *ngIf="password.errors.minlength" class="validation-message">password length must be more
+                        than
+                        6 characters</span>
+                </div>
+
+            </div>
+
+
+            <!-- Button -->
+
+            <div id="submitBtn" class="form-group">
+                <button type="submit" id="submit" [disabled]="signInForm.invalid==true ">
+                    Sign In </button>
+            </div>
+
+        </form>
+
+
+        <!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>
+
+        <div style="width:40%;margin-left:25%;margin-right:35%;margin-top: 50px;">
+            <p>Don't have an account yet?</p>
+            <div class="">
+                <a routerLink="/signup">Sign Up here</a>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

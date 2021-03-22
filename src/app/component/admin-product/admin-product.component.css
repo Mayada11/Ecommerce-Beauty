@@ -1,0 +1,79 @@
+.card-img-top{
+    height: 20rem;
+}
+.card{
+    align-items: center;
+    height: 30rem;
+    width: 20rem;
+    border: none; 
+    cursor: pointer;  
+}
+.mycard{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card:hover .field--name-name{
+    color: #007bff;
+    font-size: large;
+}
+p.field--name-name{
+    margin: 0px 0px 0px;
+}
+.subtitle{
+    color:rgb(219, 44, 82);
+    font-size: small;
+    margin: 0px 0px 10px;
+}
+.price{
+    margin: 0px 0px 10px;
+}
+.btn-primary:hover{
+   background-color: rgb(219, 44, 82);
+   border:none;
+}   
+.btn-primary:active{
+    transform: translateY(2px);
+    border:none;
+}
+.btn-primary{
+    width: 6rem;
+}
+.delete{
+    margin-left: 1rem;
+}
+
+/* Modal */
+.add , .cancel{
+    background-color: rgb(219, 44, 82);
+    color: white;
+    /* border-color: blue; */
+    border-radius: 8px;
+    padding: 6px;
+}
+ .cancel:hover{
+    color: white;
+    background-color: rgb(219, 44, 82);
+    border-color: rgb(219, 44, 82);
+}
+input{
+    justify-content: center;
+    margin-left: 15%;
+    
+}
+#description{
+    margin-left: 5%;
+}
+.modal-header{
+    background-color: rgb(245, 127, 152);
+}
+.modal-title{
+    color: rgba(0, 0, 0, 0.404);
+}
+
+.btn-outline-primary:hover{
+background-color: indianred;
+
+}
+
+

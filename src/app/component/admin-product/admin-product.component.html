@@ -1,0 +1,136 @@
+<!-- Button trigger modal to create product -->
+<br><br>
+<button class="btn btn-lg btn-outline-primary" style="text-align: center;margin-left:45% ;width: 10em;border: none;color: rgba(0, 0, 0, 0.651);" (click)="open(mymodal)">ADD Product</button>
+
+<br><br><br><br>
+<!--card for products-->
+<div class="mycard">
+  <div class="card " *ngFor="let p of products">
+    <img src={{p.productImage}} class="img-fluid" style="width: 10rem;height: 10rem;" alt="Dark Kiss Lotion">
+    <div class="card-body">
+      <p class="field--name-name">{{p.title}}</p>
+      <p class="subtitle">{{p.description}}</p>
+      <div class="price">
+        <span class="price-currencysuffix">EGP</span>
+        <span class="price-amount">{{p.price}} </span>
+      </div>
+      <div>
+        <a href="#" class="btn btn-primary" (click)="open(mymodalEditProduct)">
+          <fa-icon [icon]="faEdit"></fa-icon>Edit
+        </a>
+        <a href="#" class="btn btn-primary delete" (click)="delete_product(p)">
+          <fa-icon [icon]="faTrash"></fa-icon>Delete
+        </a>
+      </div>
+    </div>
+
+  <!-- Modal Edit Product -->
+  <ng-template id="modal-1" #mymodalEditProduct let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit Product</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form name="EditForm" #EditForm="ngForm" (ngSubmit)="EditForm.valid && onSubmit(EditForm,p,title.value,description.value,price.value)" >
+
+        <div class="form-group">
+          <label>Title</label>
+          <input class="formElement" value="title" type="text" #title="ngModel" ngModel=""
+              name="title" placeholder="title" required pattern="^[a-zA-Z\s]+$">
+          <div *ngIf="title.touched && title.errors" class="formElement">
+              <span *ngIf="title.errors.required" class="validation-message">title is required</span>
+              <span *ngIf="title.errors.pattern" class="validation-message">invalid pattern for title</span>
+              
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <input class="formElement" id="description" value="description" type="text" #description="ngModel" ngModel=""
+              name="description" placeholder="description" required pattern="^[a-zA-Z\s]+$">
+          <div *ngIf="description.touched && description.errors" class="formElement">
+              <span *ngIf="description.errors.required" class="validation-message">description is required</span>
+              <span *ngIf="description.errors.pattern" class="validation-message">invalid pattern for description</span>
+              
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>price</label>
+          <input class="formElement" value="price" type="number" #price="ngModel" ngModel=""
+              name="price" placeholder="price" required >
+          <div *ngIf="price.touched && price.errors" class="formElement">
+              <span *ngIf="price.errors.required" class="validation-message">Price is required</span>
+          </div>
+
+        </div>
+
+        <button  type="submit" [disabled]="EditForm.invalid==true"  class="btn btn-outline-dark add">Save</button>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark cancel" data-dismiss="modal Close" (click)="modal.dismiss()">Cancel</button>
+    </div>
+  </ng-template>
+
+  </div>
+  <br><br>
+ 
+
+  <!-- Modal to create product -->
+  <ng-template #mymodal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Create New Product</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form name="EditForm" #EditForm="ngForm" (ngSubmit)="onSubmitPostProduct(title.value,description.value,price.value,img.value)" >
+
+        <div class="form-group">
+          <label>Title</label>
+          <input class="formElement" value="title" type="text" #title="ngModel" ngModel=""
+              name="title" placeholder="title" required pattern="^[a-zA-Z\s]+$">
+          <div *ngIf="title.touched && title.errors" class="formElement">
+              <span *ngIf="title.errors.required" class="validation-message">title is required</span>
+              <span *ngIf="title.errors.pattern" class="validation-message">invalid pattern for title</span>
+              
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <input class="formElement" id="description" value="description" type="text" #description="ngModel" ngModel=""
+              name="description" placeholder="description" required pattern="^[a-zA-Z\s]+$">
+          <div *ngIf="description.touched && description.errors" class="formElement">
+              <span *ngIf="description.errors.required" class="validation-message">description is required</span>
+              <span *ngIf="description.errors.pattern" class="validation-message">invalid pattern for description</span>
+              
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>price</label>
+          <input class="formElement" value="price" type="number" #price="ngModel" ngModel=""
+              name="price" placeholder="price" required >
+          <div *ngIf="price.touched && price.errors" class="formElement">
+              <span *ngIf="price.errors.required" class="validation-message">Price is required</span>
+          </div>
+
+        </div>
+
+        <label>Image: </label>
+        <input #img type="file" required name="img" ngModel (change)="onFileSelected($event)"><br><br>
+
+        <button  type="submit" [disabled]="EditForm.invalid==true" class="btn btn-outline-dark add">Add</button>
+      </form>
+      </div>
+      
+    <div class="modal-footer">
+
+       <button type="button" class="btn btn-outline-dark cancel" data-dismiss="modal" (click)="modal.dismiss()">Close</button>
+    </div>
+  </ng-template> 

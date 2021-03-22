@@ -1,0 +1,42 @@
+.card-img-top{
+    height: 20rem;
+}
+.card{
+    align-items: center;
+    height: 30rem;
+    width: 20rem;
+    border: none; 
+    cursor: pointer;  
+    
+}
+.mycard{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card:hover .field--name-name{
+    color: #007bff;
+    font-size: large;
+}
+p.field--name-name{
+    margin: 0px 0px 0px;
+}
+.subtitle{
+    color:rgb(219, 44, 82);
+    font-size: small;
+    margin: 0px 0px 10px;
+}
+.price{
+    margin: 0px 0px 10px;
+}
+.btn-primary:hover{
+   background-color: rgb(219, 44, 82);
+   border:none;
+}   
+.btn-primary:active{
+    transform: translateY(2px);
+    border:none;
+}
+
+
+
